@@ -7,7 +7,7 @@ numero_saques = 0
 LIMITE_SAQUES = 3
 
 menu = """
-[d] Depositar | [s] Sacar | [e] Consultar Extrato | [q] Sair
+[0] Depositar | [1] Sacar | [2] Consultar Extrato | [3] Sair
 
 """
 print(
@@ -24,7 +24,7 @@ while True:
     os.system("cls")
     
     # Depósito
-    if opcao == 'd':
+    if opcao == 0:
         valor = float(input("Digite a quantia que deseja depositar: "))
 
         if valor > 0:
@@ -37,7 +37,7 @@ while True:
             print("Por favor, digite um valor válido para depositar.")
 
     # Saque
-    elif opcao == 's':
+    elif opcao == 1:
         valor = float(input("Digite a quantia que deseja sacar: "))
 
         excedeu_saldo = valor > saldo
@@ -63,12 +63,12 @@ while True:
             print(f"Saldo após saque: R$ {saldo}")
 
     # Extrato        
-    elif opcao == 'e':
+    elif opcao == 2:
         print("Não existem movimentações recentes." if not extrato else extrato)
         print(f"\nSaldo: {saldo:.2f}")
 
 
-    elif opcao == 'q':
+    elif opcao == 3:
         print("Obrigado por usar o banco Codea. Volte sempre!")
         time.sleep(2)
         break
