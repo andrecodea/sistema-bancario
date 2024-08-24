@@ -29,7 +29,7 @@ while True:
 
         if valor > 0:
             saldo += valor
-            extrato += f"+ R${valor:.2f}\n"
+            extrato += f"+ R$ {valor:.2f}\n"
             print(f"Seu depósito de R$ {valor} foi realizado com sucesso.")
             print(f"Saldo após depósito: {saldo}")
         
