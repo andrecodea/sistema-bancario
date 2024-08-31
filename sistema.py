@@ -1,13 +1,15 @@
 import os
 import time
+import datetime
 extrato = ""
 saldo = 0
 limite = 500
 numero_saques = 0
 LIMITE_SAQUES = 3
+LIMITE_TRANSACOES = 10
 
 menu = """
-[0] Depositar | [1] Sacar | [2] Consultar Extrato | [3] Sair
+0 - Depositar | 1 - Sacar | 2 - Consultar Extrato | 3 - Sair
 
 """
 print(
@@ -18,8 +20,8 @@ Qual operação você desesja realizar hoje?
       """
       )      
 while True:
-
-    opcao = input(menu)
+    print(menu)
+    opcao = input("Digite a opção desejada: ")
 
     os.system("cls")
     
@@ -65,7 +67,7 @@ while True:
     # Extrato        
     elif opcao == 2:
         print("Não existem movimentações recentes." if not extrato else extrato)
-        print(f"\nSaldo: {saldo:.2f}")
+        print(f"\nSaldo: {saldo:.2f}, {datetime.now()}")
 
 
     elif opcao == 3:
