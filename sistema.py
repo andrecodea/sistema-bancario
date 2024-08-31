@@ -21,7 +21,11 @@ Qual operação você desesja realizar hoje?
       )      
 while True:
     print(menu)
-    opcao = input("Digite a opção desejada: ")
+    try:
+        opcao = int(input("Digite a opção desejada: "))
+    except ValueError:
+        print("Opção inválida. Por favor, digite um número.")
+        continue
 
     os.system("cls")
     
